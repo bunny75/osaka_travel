@@ -7,13 +7,13 @@ body {
 .titleSection {
     clear: both;
     width: 100%;
-    height: 600px;
+    height: 400px;
     text-align: center;
     box-sizing: border-box;
     position: relative;
 }
 
-.titleSection .slide-in {
+.titleSection .slide-right-to-left {
     position: absolute;
     top: 40%;
     width: 100%;
@@ -23,10 +23,58 @@ body {
     color: #FFFFFF
 }
 
+.titleSection .slide-left-to-right {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    font-size: 70px;
+    color: #FFFFFF
+}
+
+.titleSection .slide-bottom-to-top {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    font-size: 70px;
+    color: #FFFFFF
+}
+
+.desSection {
+    /*margin-bottom: 20px;*/
+    clear: #FFFFFF;
+    width: 100%;
+    height: 300px;
+    background-color: #282E34;
+    color:#FFF;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.desSection .text-wrapper {
+    max-width: 1000px;
+    margin: auto;
+    font-size: 16px;
+    line-height: 1.5em;
+    padding-top: 10%;
+}
+
+.desSection .text-wrapper span {
+    opacity: 0;
+    -webkit-transition: opacity 0.2s;
+}
+
+.desSection .text-wrapper span.visible {
+    opacity: 1;
+}
+
 .section {
     clear: both;
     width: 100%;
-    height: 900px;
+    height: 400px;
     box-sizing: border-box;
     position: relative;
 }
@@ -95,9 +143,9 @@ body {
 .section-3 .text-wrapper {
     max-width: 600px;
     margin: auto;
-    font-size: 2em;
+    font-size: 16px;
     line-height: 1.5em;
-    padding-top: 20%;
+    padding-top: 10%;
     
 }
 

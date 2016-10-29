@@ -2,11 +2,35 @@
     $(document).ready(function() {
         $.jScrollability([
             {
-                'selector': '.slide-in',
+                'selector': '.slide-right-to-left',
                 'start': 'parent',
                 'end': 'parent',
                 'fn': {
                     'left': {
+                        'start': -100,
+                        'end': 0,
+                        'unit': '%'
+                    }
+                }
+            },  
+            {
+                'selector': '.slide-left-to-right',
+                'start': 'parent',
+                'end': 'parent',
+                'fn': {
+                    'left': {
+                        'start': 100,
+                        'end': 0,
+                        'unit': '%'
+                    }
+                }
+            },
+            {
+                'selector': '.slide-bottom-to-top',
+                'start': 'parent',
+                'end': 'parent',
+                'fn': {
+                    'top': {
                         'start': 100,
                         'end': 0,
                         'unit': '%'
