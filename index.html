@@ -154,16 +154,19 @@
         z-index: 4;
         height: 46px;
         padding: 15px 20px 0 20px;
-        -webkit-font-smoothing: antialiased;
+        /*-webkit-font-smoothing: antialiased;*/
         /*font-family: Matrix-SmallCaps, serif;*/
         font-size: 1.1rem;
         line-height: 1.0rem;
         letter-spacing: 3px;
         color: #fff;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        /*transition: color .3s cubic-bezier(.455, .03, .515, .955);*/
-        
+        text-decoration: none !important;
+        /*-webkit-backface-visibility: hidden;
+        backface-visibility: hidden;*/
+    }
+
+    .bgimg-1-btn a:link {
+        color:inherit;
     }
 
     .bgimg-1-btn:after {
@@ -172,24 +175,18 @@
         z-index: -10;
         -webkit-transform-origin: center bottom;
         transform-origin: center bottom;
-        -webkit-transform: translateZ(0) scaleY(0);
-        transform: translateZ(0) scaleY(0);
-        /*transition: .3s cubic-bezier(.455, .03, .515, .955);*/
-        /*background-color: #5cc797;
-        padding: 10px 40px 0;*/
+        /*-webkit-transform: translateZ(0) scaleY(0);
+        transform: translateZ(0) scaleY(0);*/
     }
 
-    .bgimg-1-btn-text:hover {
-        background-size: 10%;
-        background-color: #5cc797;
-        /*padding: 5px 30px 0;*/
+    a.bgimg-1-btn-text:hover {
+        color: #26333b !important;
+        font-size: 1.1rem;
+        line-height: 1.0rem;
+        letter-spacing: 3px;
+        background:url(resources/white.jpg) center center/120px 35px no-repeat !important;
     }
 
-    .bgimg-1-btn-text:hover:after {
-        -webkit-transform: translateZ(0) scaleY(1);
-        transform: translateZ(0) scaleY(1);
-
-    }
 
     .bgimg-1-btn-text:hover .vert {
         -webkit-transform: translateZ(0) scaleY(0);  
@@ -273,14 +270,6 @@
         color: #cb0000
     }*/
 
-    a.bgimg-1-btn-text:hover {
-        background-size: 25%;
-        text-decoration: none;
-        color: #fff;
-        /*border-color: #8ebc52;*/
-        border-style: none;
-        /*background-color: #52b8bc;*/
-    }
     
     </style>
 </head>
