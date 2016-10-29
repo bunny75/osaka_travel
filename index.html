@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <!-- 最新編譯和最佳化的 CSS -->
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- <script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
@@ -11,6 +12,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
     <!-- 最新編譯和最佳化的 JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jScrollability.js"></script>
+    <script src="scroll.js"></script>
     <script type="text/javascript">
     $(function() {
         $("#home").click(function() {
@@ -32,14 +36,11 @@
         }, {
             duration: 500,
             easing: "swing"
-            });
+        });
 
-            return false;
+        return false;
 
     });
-
-
-
     </script>
     <style>
     body,
@@ -66,25 +67,28 @@
         transform: scale(1.2, 1.2);
         opacity: 1;
     }
+    
     .bgimg-2:hover {
         transform: scale(1.2);
         opacity: 1;
     }
+    
     .bgimg-3:hover {
         transform: scale(1.2);
         -moz-transform: scale(1.2);
         -webkit-transform: scale(1.2);
         -o-transform: scale(1.2);
-         -ms-transform: scale(1.2);
+        -ms-transform: scale(1.2);
         /*transform: scale(1.2, 1.2);*/
         opacity: 1;
         overflow: hidden;
     }
+    
     .bgimg-4:hover {
         transform: scale(1.2, 1.2);
         opacity: 1;
     }
-
+    
     .bgimg-1 {
         background-image: url("resources/osaka_night.jpg");
         min-height: 100%;
@@ -140,15 +144,15 @@
         font: 20px "Lato", sans-serif;
         color: #111;
     }
-
+    
     .icon {
         color: #ccc;
         text-align: center;
         margin: 10px;
     }
-
     
     .bgimg-1-btn-text {
+        text-decoration: none !important;
         display: inline-block;
         position: relative;
         z-index: 4;
@@ -187,66 +191,73 @@
         background:url(resources/white.jpg) center center/120px 35px no-repeat !important;
     }
 
-
-    .bgimg-1-btn-text:hover .vert {
-        -webkit-transform: translateZ(0) scaleY(0);  
-        transform: translateZ(0) scaleY(0);
-
+    .bgimg-1-btn-text:hover {
+        background-size: 10%;
+        background-color: #5cc797;
+        /*padding: 5px 30px 0;*/
     }
-
+    
+    .bgimg-1-btn-text:hover:after {
+        -webkit-transform: translateZ(0) scaleY(1);
+        transform: translateZ(0) scaleY(1);
+    }
+    
+    .bgimg-1-btn-text:hover .vert {
+        -webkit-transform: translateZ(0) scaleY(0);
+        transform: translateZ(0) scaleY(0);
+    }
+    
     .bgimg-1-btn-text:hover .hor {
         -webkit-transform: translateZ(0) scaleX(0);
         transform: translateZ(0) scaleX(0)
     }
-
+    
     .bgimg-1-btn-text-border {
         position: absolute;
         background: #fff;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-        transition: .3s cubic-bezier(.0,.0,.0,.0);
+        transition: .3s cubic-bezier(.0, .0, .0, .0);
     }
-
+    
     .bgimg-1-btn-text-border.vert {
         top: 0;
         width: 2px;
         height: 100%
     }
-
+    
     .bgimg-1-btn-text-border.hor {
         left: 0;
         width: 100%;
         height: 2px
     }
-
+    
     .bgimg-1-btn-text-border.left {
         left: 0;
         -webkit-transform-origin: center top;
         transform-origin: center top
     }
-
+    
     .bgimg-1-btn-text-border.right {
         right: 0;
         -webkit-transform-origin: center bottom;
         transform-origin: center bottom
     }
-
+    
     .bgimg-1-btn-text-border.top {
         top: 0;
         -webkit-transform-origin: right center;
         transform-origin: right center
     }
-
+    
     .bgimg-1-btn-text-border.bottom {
         bottom: 0;
         -webkit-transform-origin: left center;
         transform-origin: left center
     }
-
     /*.bgimg-1-btn-text-brown .bgimg-1-btn-text-border {
         background: #3c2311
     }*/
-
     /*.bgimg-1-btn-text-brown {
         color: #3c2311
     }
@@ -261,16 +272,21 @@
     .bgimg-1-btn-text-brown .bgimg-1-btn-text:after, .bgimg-1-btn-text-red .bgimg-1-btn-text:after {
         background: #fff
     }*/
-
     /*a.bgimg-1-btn-text:hover {
         color: #95714b
     }
 
     a.bgimg-1-btn-text:hover {
         color: #cb0000
-    }*/
-
-    
+    }*/    
+    a.bgimg-1-btn-text:hover {
+        background-size: 25%;
+        text-decoration: none;
+        color: #fff;
+        /*border-color: #8ebc52;*/
+        border-style: none;
+        /*background-color: #52b8bc;*/
+    }
     </style>
 </head>
 
@@ -330,31 +346,30 @@
         <div class="caption">
             <span class="border">大阪市</span>
         </div>
-                <img style="height: 300px; padding-top: 130px;" src="resources/cat.png">
     </div>
     <div style="z-index: 3; position:relative;">
         <div style="color: #777; background-color:white;text-align:center;padding:50px 80px;text-align: justify;" id="second">
             <h3 style="text-align:center;">大阪市</h3>
             <p>大阪市是位於日本大阪府的都市，也是大阪府府治，為政令指定都市之一，亦是大阪都市圈、京阪神大都市圈、乃至於近畿地方的中心城市。全市面積223平方公里，夜間人口（居住人口）約有269.5萬人，是日本人口第三多的城市；日間人口則超過353萬人，位居日本第二。</br>
-            大阪自奈良時代開始，就因其臨海的地理位置成為貿易港口，並曾在此建立「難波京」。</br>安土桃山時代，豐臣秀吉修建大阪城，並以大阪做為豐臣政權的統治核心城市。在江戶時代，大阪和京都、江戶並稱為「三都」，是當時日本經濟活動最旺盛的都市，被譽為「天下的廚房」。</br>明治時代之後，大阪仍是日本最重要的產業都市，人口數曾一度超過東京，有「大大阪」之稱。在戰後由於東京一極集中的進展，大阪雖然在人口數和經濟發展上被東京拉開距離，但仍然是西日本的最大都市和經濟中心。除了經濟之外，大阪也以其獨特的文化而著稱。</br>今日的大阪和東京並列為日本最具代表性的大都市，也是在世界具有知名度的國際性都市。2014年，按照美國諮詢公司A.T科爾尼的全球城市排名，大阪市位居世界第55位。</p>
+                大阪自奈良時代開始，就因其臨海的地理位置成為貿易港口，並曾在此建立「難波京」。</br>安土桃山時代，豐臣秀吉修建大阪城，並以大阪做為豐臣政權的統治核心城市。在江戶時代，大阪和京都、江戶並稱為「三都」，是當時日本經濟活動最旺盛的都市，被譽為「天下的廚房」。</br>明治時代之後，大阪仍是日本最重要的產業都市，人口數曾一度超過東京，有「大大阪」之稱。在戰後由於東京一極集中的進展，大阪雖然在人口數和經濟發展上被東京拉開距離，但仍然是西日本的最大都市和經濟中心。除了經濟之外，大阪也以其獨特的文化而著稱。</br>今日的大阪和東京並列為日本最具代表性的大都市，也是在世界具有知名度的國際性都市。2014年，按照美國諮詢公司A.T科爾尼的全球城市排名，大阪市位居世界第55位。</p>
         </div>
     </div>
-
     <div class="bgimg-2" id="osakaCastle">
-        <div class="caption" >
+        <div class="caption">
             <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">大阪城</span>
         </div>
     </div>
     <div style="z-index: 3; position:relative;">
         <div style="color:#ddd;  background-color:#282E34; text-align:center;padding:50px 80px;text-align: justify;">
             <p>大阪城，位於日本大阪市中央區（古屬攝津國東成郡）的大阪城公園內，為大阪名勝之一，和名古屋城、熊本城並列日本歷史上的三名城，別名「金城」或「錦城」。</br>
-            在桃山時代是豐臣秀吉的居城。後來德川家康以兩次大坂之役（冬之陣、夏之陣）消滅了豐臣家，此後大坂城成為德川幕府控制西日本大名的重要據點。</br>
-            城郭含城下町等周長約7.8公里，與江戶城初期（內郭）相當（江戶後期含城下町外郭周長約15.8ｋｍ）。</p>
+                在桃山時代是豐臣秀吉的居城。後來德川家康以兩次大坂之役（冬之陣、夏之陣）消滅了豐臣家，此後大坂城成為德川幕府控制西日本大名的重要據點。</br>
+                城郭含城下町等周長約7.8公里，與江戶城初期（內郭）相當（江戶後期含城下町外郭周長約15.8ｋｍ）。</p>
             「大阪」在明治維新前寫作「大坂」，維新後忌於「坂」字可拆為「士反」，有「武士叛亂」之諱，因此於明治三年（1870年）改名為「大阪」，「大坂城」也因而更名為「大阪城」。一般講述更名前的歷史時仍會以舊寫「大坂城」稱之，以示時代區別。
-            <p></p></br>
+            <p></p>
+            </br>
             <div class="bgimg-1-btn">
                 <!-- <a href="javacript:;" class="bgimg-1-btn-text">大阪城探索</a> -->
-                <a class="bgimg-1-btn-text" href="javacript:;" >
+                <a class="bgimg-1-btn-text" href="javacript:;">
                     大阪城探索
                     <span class="bgimg-1-btn-text-border vert left"></span>
                     <span class="bgimg-1-btn-text-border vert right"></span>
@@ -376,25 +391,19 @@
         </div>
     </div>
     <div class="bgimg-4" id="osakaCityRiver">
-        <div class="caption">
-            <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">道頓堀</span>
+        <div class="titleSection">
+            <span class="slide-in">道頓堀</span>
         </div>
-        
-        
     </div>
-        <!-- <div style= "position: absolute; z-index: 100; color:#ddd; background-color:transparent;/*#282E34*/; width: 100px; height: 100px; /*padding:10px 80px;*/text-align: justify; ">
+    <!-- <div style= "position: absolute; z-index: 100; color:#ddd; background-color:transparent;/*#282E34*/; width: 100px; height: 100px; /*padding:10px 80px;*/text-align: justify; ">
             <img src="resources/osakaBg.jpg" width="300px" height="100px"> -->
-        
     </div>
     <div style="z-index: 3; position:relative;">
         <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
             <p>道頓堀是一條位於日本大阪府大阪市的運河，以鄰近的戲院、商業及娛樂場所聞名。道頓堀與木津川及東橫堀川連接，全長約2.9公里，其名字亦成為大阪市中央區一個町的名稱。</br>
-            大阪素有關西廚房之美譽，尤其在道頓堀，可以找到各式各樣的美食，其知名的餐廳蟹道樂（かに道楽）總店及門外長30呎的大型蟹模型是道頓堀另一著名地標。
-            沿著道頓堀運河旁兩旁有很多其他的美食餐廳、還有娛樂場所，圖中的一個人奔跑的固力果霓虹廣告，更常被雜誌拿來作代表大阪的照片。
+                大阪素有關西廚房之美譽，尤其在道頓堀，可以找到各式各樣的美食，其知名的餐廳蟹道樂（かに道楽）總店及門外長30呎的大型蟹模型是道頓堀另一著名地標。 沿著道頓堀運河旁兩旁有很多其他的美食餐廳、還有娛樂場所，圖中的一個人奔跑的固力果霓虹廣告，更常被雜誌拿來作代表大阪的照片。
         </div>
     </div>
-    
-
 </body>
 
 </html>
