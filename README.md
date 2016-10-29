@@ -2,3 +2,5 @@
 introduce osaka
 
 a project for introduce osaka city in japan. :D
+
+QQ.
