@@ -47,8 +47,9 @@
     html {
         height: 100%;
         margin: 0;
+        padding: 0;
         font: 400 15px/1.8 "Lato", sans-serif;
-        color: #777;
+        /*overflow-x: hidden;*/
     }
     
     .bgimg-1,
@@ -58,14 +59,16 @@
         position: relative;
         opacity: 0.70;
         background-attachment: fixed;
-        background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center center; 
+        /*max-width:100%;*/
     }
     
     .bgimg-1:hover {
         transform: scale(1.2, 1.2);
         opacity: 1;
+        /*max-width:100%;*/
     }
     
     .bgimg-2:hover {
@@ -164,7 +167,7 @@
         line-height: 1.0rem;
         letter-spacing: 3px;
         color: #fff;
-        text-decoration: none !important;
+        text-decoration: none;
         /*-webkit-backface-visibility: hidden;
         backface-visibility: hidden;*/
     }
@@ -184,19 +187,15 @@
     }
 
     a.bgimg-1-btn-text:hover {
-        color: #26333b !important;
+        color: #282E34 !important;
         font-size: 1.1rem;
         line-height: 1.0rem;
         letter-spacing: 3px;
-        background:url(resources/white.jpg) center center/120px 35px no-repeat !important;
-    }
+        animation-name: home-btn-anime;
+        animation-duration: .2s;
+        animation-fill-mode: forwards;
+    }    
 
-    .bgimg-1-btn-text:hover {
-        background-size: 10%;
-        background-color: #5cc797;
-        /*padding: 5px 30px 0;*/
-    }
-    
     .bgimg-1-btn-text:hover:after {
         -webkit-transform: translateZ(0) scaleY(1);
         transform: translateZ(0) scaleY(1);
@@ -255,6 +254,23 @@
         -webkit-transform-origin: left center;
         transform-origin: left center
     }
+    @keyframes home-btn-anime {
+        0%   {background:url(resources/white.jpg) bottom center/120px 0 no-repeat;}
+        12%   {background:url(resources/white.jpg) bottom center/120px 4px no-repeat;}
+        25%   {background:url(resources/white.jpg) bottom center/120px 9px no-repeat;}
+        37%   {background:url(resources/white.jpg) bottom center/120px 13px no-repeat;}
+        50%   {background:url(resources/white.jpg) bottom center/120px 18px no-repeat;}
+        62%   {background:url(resources/white.jpg) bottom center/120px 22px no-repeat;}
+        75%   {background:url(resources/white.jpg) bottom center/120px 28px no-repeat;}
+        87%   {background:url(resources/white.jpg) bottom center/120px 32px no-repeat;}
+        100%   {background:url(resources/white.jpg) center center/120px 35px no-repeat;}
+        /*0%   {background-color:red; left:0px; top:0px;}
+        25%  {background-color:yellow; left:1000px; top:0px;}
+        50%  {background-color:blue; left:200px; top:200px;}
+        75%  {background-color:green; left:0px; top:200px;}
+        100% {background-color:red; left:0px; top:0px;}*/
+    }
+
     /*.bgimg-1-btn-text-brown .bgimg-1-btn-text-border {
         background: #3c2311
     }*/
@@ -279,14 +295,7 @@
     a.bgimg-1-btn-text:hover {
         color: #cb0000
     }*/    
-    a.bgimg-1-btn-text:hover {
-        background-size: 25%;
-        text-decoration: none;
-        color: #fff;
-        /*border-color: #8ebc52;*/
-        border-style: none;
-        /*background-color: #52b8bc;*/
-    }
+
     </style>
 </head>
 
@@ -307,9 +316,9 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="#osakaCastle">大阪城</a></li>
-                    <li class="icon">/</li>
+                    <!-- <li class="icon">/</li> -->
                     <li><a href="#osakaTower">通天閣</a></li>
-                    <li class="icon">/</li>
+                    <!-- <li class="icon">/</li> -->
                     <li class="dropdown">
                         <a href="osakaCityRiver" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">道頓堀 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -342,23 +351,25 @@
         <!-- /.container-fluid -->
     </nav>
     <!-- -->
+    <!-- <div class="bgimg-1-container"> -->
     <div class="bgimg-1" id="osakaAttraction">
         <div class="caption">
             <span class="border">大阪市</span>
         </div>
     </div>
+    
     <div style="z-index: 3; position:relative;">
-        <div style="color: #777; background-color:white;text-align:center;padding:50px 80px;text-align: justify;" id="second">
+        <div style="color: #777; background-color:white;text-align:center;padding:50px 80px;text-align: justify;" id="second;">
             <h3 style="text-align:center;">大阪市</h3>
             <p>大阪市是位於日本大阪府的都市，也是大阪府府治，為政令指定都市之一，亦是大阪都市圈、京阪神大都市圈、乃至於近畿地方的中心城市。全市面積223平方公里，夜間人口（居住人口）約有269.5萬人，是日本人口第三多的城市；日間人口則超過353萬人，位居日本第二。</br>
                 大阪自奈良時代開始，就因其臨海的地理位置成為貿易港口，並曾在此建立「難波京」。</br>安土桃山時代，豐臣秀吉修建大阪城，並以大阪做為豐臣政權的統治核心城市。在江戶時代，大阪和京都、江戶並稱為「三都」，是當時日本經濟活動最旺盛的都市，被譽為「天下的廚房」。</br>明治時代之後，大阪仍是日本最重要的產業都市，人口數曾一度超過東京，有「大大阪」之稱。在戰後由於東京一極集中的進展，大阪雖然在人口數和經濟發展上被東京拉開距離，但仍然是西日本的最大都市和經濟中心。除了經濟之外，大阪也以其獨特的文化而著稱。</br>今日的大阪和東京並列為日本最具代表性的大都市，也是在世界具有知名度的國際性都市。2014年，按照美國諮詢公司A.T科爾尼的全球城市排名，大阪市位居世界第55位。</p>
         </div>
     </div>
+    <!-- </div> -->
     <div class="bgimg-2" id="osakaCastle">
         <div class="titleSection">
             <span class="slide-left-to-right">大阪城</span>
         </div>
-
     </div>
     <div style="z-index: 3; position:relative;">
         <div style="color:#ddd;  background-color:#282E34; text-align:center;padding:50px 80px;text-align: justify;">
@@ -369,7 +380,6 @@
             <p></p>
             </br>
             <div class="bgimg-1-btn">
-                <!-- <a href="javacript:;" class="bgimg-1-btn-text">大阪城探索</a> -->
                 <a class="bgimg-1-btn-text" href="javacript:;">
                     大阪城探索
                     <span class="bgimg-1-btn-text-border vert left"></span>
@@ -386,9 +396,20 @@
         </div>
     </div>
     <div style="z-index: 3; position:relative;">
-        <div style="color:#ddd;  background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+        <div style="color:#ddd;  background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify; ">
             <p>通天閣是位於日本大阪府大阪市浪速區新世界商業街的一個瞭望塔。為日本的登錄有形文化財產。具體地點是大阪府大阪市浪速區恵美須東1-18-6。</br>通天閣被稱為「浪速的埃菲爾鐵塔」，是為大阪的代表性標誌。</br>這裡有可以飽覽整個大阪風光的展望台，更有摸摸腳底便能帶來好運的「Billiken」神像坐鎮。</p>
             通天閣這個名字的意思是「直通天空的高建築物」，命名者是明治初期的儒學者藤澤南嶽。通天閣是由建築師內藤多仲所設計，他也是東京鐵塔的設計者。現在的通天閣完成於1956年（昭和31年），是第二代通天閣。塔高100米，含避雷針的話則有103米。由350噸的鐵材建成，為一大娛樂設施「新世界」的象徵。利用內國勸業博覽會留下的廣大土地，同時也是大阪政界及財界主辦的計畫，鐵塔的規模可謂盛大空前。塔上有電機大廠日立的廣告。
+            <p></p>
+            </br>
+            <div class="bgimg-1-btn">
+                <a class="bgimg-1-btn-text" href="javacript:;">
+                    通天閣探索
+                    <span class="bgimg-1-btn-text-border vert left"></span>
+                    <span class="bgimg-1-btn-text-border vert right"></span>
+                    <span class="bgimg-1-btn-text-border hor top"></span>
+                    <span class="bgimg-1-btn-text-border hor bottom"></span>
+                </a>
+            </div>
         </div>
     </div>
     <div class="bgimg-4" id="osakaCityRiver">
