@@ -6,7 +6,7 @@
     <!-- 最新編譯和最佳化的 CSS -->
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- <script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script> -->
+    <script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <!-- 選擇性佈景主題 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
@@ -41,15 +41,24 @@
         return false;
 
     });
+//     $( document ).ready(function() {
+//         $(".bgimg-1").mouseover(function(){
+//             console.log( "ready!" );
+//             $(".bgimg-1").css({
+//     "background-size": 1046 ,
+//     "-webkit-background-size": 1046,
+// });
+//         })
+//     });
     </script>
     <style>
     body,
     html {
-        height: 100%;
+        /*height: 100%;*/
         margin: 0;
         padding: 0;
         font: 400 15px/1.8 "Lato", sans-serif;
-        /*overflow-x: hidden;*/
+        overflow-x: hidden;
     }
     
     .bgimg-1,
@@ -61,49 +70,60 @@
         background-attachment: fixed;
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: center center; 
-        /*max-width:100%;*/
+        background-position: center top; 
+       
     }
     
     .bgimg-1:hover {
-        transform: scale(1.2, 1.2);
+        transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        -ms-transform: scale(1.1);
         opacity: 1;
-        /*max-width:100%;*/
     }
+   
     
     .bgimg-2:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        -ms-transform: scale(1.1);
         opacity: 1;
     }
     
     .bgimg-3:hover {
-        transform: scale(1.2);
-        -moz-transform: scale(1.2);
-        -webkit-transform: scale(1.2);
-        -o-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        /*transform: scale(1.2, 1.2);*/
+        transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        -ms-transform: scale(1.1);
         opacity: 1;
         overflow: hidden;
     }
     
     .bgimg-4:hover {
-        transform: scale(1.2, 1.2);
+        transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        -ms-transform: scale(1.1);
         opacity: 1;
     }
     
     .bgimg-1 {
         background-image: url("resources/osaka_night.jpg");
-        min-height: 100%;
-        transition: 10s;
-        overflow: hidden;
+        min-height: 700px;
+        /*transition: all 10s ease-in-out;*/
+        transition: 7s;
         z-index: 1;
     }
     
     .bgimg-2 {
         background-image: url("resources/osaka_castle.jpg");
         min-height: 500px;
-        transition: 10s;
+        transition: 7s;
         overflow: hidden;
         z-index: 1;
     }
@@ -111,7 +131,7 @@
     .bgimg-3 {
         background-image: url("resources/tsutenkaku.jpg");
         min-height: 500px;
-        transition: 10s;
+        transition: 7s;
         overflow: hidden;
         z-index: 1;
     }
@@ -119,7 +139,7 @@
     .bgimg-4 {
         background-image: url("resources/osaka_home.jpg");
         min-height: 500px;
-        transition: 10s;
+        transition: 7s;
         overflow: hidden;
         z-index: 1;
     }
@@ -171,19 +191,11 @@
         /*-webkit-backface-visibility: hidden;
         backface-visibility: hidden;*/
     }
-
+    .bgimg-1-btn{
+        padding: 0 80px 50px 80px;
+    }
     .bgimg-1-btn a:link {
         color:inherit;
-    }
-
-    .bgimg-1-btn:after {
-        content: "";
-        position: absolute;
-        z-index: -10;
-        -webkit-transform-origin: center bottom;
-        transform-origin: center bottom;
-        /*-webkit-transform: translateZ(0) scaleY(0);
-        transform: translateZ(0) scaleY(0);*/
     }
 
     a.bgimg-1-btn-text:hover {
@@ -191,6 +203,7 @@
         font-size: 1.1rem;
         line-height: 1.0rem;
         letter-spacing: 3px;
+        /*background:url(resources/white.jpg) center center/120px 35px no-repeat;*/
         animation-name: home-btn-anime;
         animation-duration: .2s;
         animation-fill-mode: forwards;
@@ -264,37 +277,7 @@
         75%   {background:url(resources/white.jpg) bottom center/120px 28px no-repeat;}
         87%   {background:url(resources/white.jpg) bottom center/120px 32px no-repeat;}
         100%   {background:url(resources/white.jpg) center center/120px 35px no-repeat;}
-        /*0%   {background-color:red; left:0px; top:0px;}
-        25%  {background-color:yellow; left:1000px; top:0px;}
-        50%  {background-color:blue; left:200px; top:200px;}
-        75%  {background-color:green; left:0px; top:200px;}
-        100% {background-color:red; left:0px; top:0px;}*/
     }
-
-    /*.bgimg-1-btn-text-brown .bgimg-1-btn-text-border {
-        background: #3c2311
-    }*/
-    /*.bgimg-1-btn-text-brown {
-        color: #3c2311
-    }
-
-    .bgimg-1-btn-text-brown:after {
-        background: #3c2311
-    }
-
-    .bgimg-1-btn-text-brown:hover {
-        color: #fff
-    }
-    .bgimg-1-btn-text-brown .bgimg-1-btn-text:after, .bgimg-1-btn-text-red .bgimg-1-btn-text:after {
-        background: #fff
-    }*/
-    /*a.bgimg-1-btn-text:hover {
-        color: #95714b
-    }
-
-    a.bgimg-1-btn-text:hover {
-        color: #cb0000
-    }*/    
 
     </style>
 </head>
@@ -358,29 +341,33 @@
         </div>
     </div>
     
-    <div style="z-index: 3; position:relative;">
-        <div style="color: #777; background-color:white;text-align:center;padding:50px 80px;text-align: justify;" id="second;">
-            <h3 style="text-align:center;">大阪市</h3>
-            <p>大阪市是位於日本大阪府的都市，也是大阪府府治，為政令指定都市之一，亦是大阪都市圈、京阪神大都市圈、乃至於近畿地方的中心城市。全市面積223平方公里，夜間人口（居住人口）約有269.5萬人，是日本人口第三多的城市；日間人口則超過353萬人，位居日本第二。</br>
-                大阪自奈良時代開始，就因其臨海的地理位置成為貿易港口，並曾在此建立「難波京」。</br>安土桃山時代，豐臣秀吉修建大阪城，並以大阪做為豐臣政權的統治核心城市。在江戶時代，大阪和京都、江戶並稱為「三都」，是當時日本經濟活動最旺盛的都市，被譽為「天下的廚房」。</br>明治時代之後，大阪仍是日本最重要的產業都市，人口數曾一度超過東京，有「大大阪」之稱。在戰後由於東京一極集中的進展，大阪雖然在人口數和經濟發展上被東京拉開距離，但仍然是西日本的最大都市和經濟中心。除了經濟之外，大阪也以其獨特的文化而著稱。</br>今日的大阪和東京並列為日本最具代表性的大都市，也是在世界具有知名度的國際性都市。2014年，按照美國諮詢公司A.T科爾尼的全球城市排名，大阪市位居世界第55位。</p>
+    <div class="largest_text_wrapper_1st" >
+        <div class="desSection">
+            <div class="text-wrapper">
+            <h3 style="text-align:center; color: #777;">大阪市</h3>
+            <span>大阪市</span><span>是位於</span><span>日本</span><span>大阪府</span><span>的都市，</span><span>也是大阪府府治</span><span>，為政令</span><span>指定都市之一，</span><span>亦是大阪都市圈</span><span>、京阪神大都市圈</span><span>、乃至於近畿地方</span><span>的中心城市。</span><span></br>全市面積</span><span>223平方公里，</span><span>夜間人口</span><span>（居住人口）</span><span>約有</span><span>269.5</span><span>萬人，</span><span>是日本人口</span><span>第三多</span><span>的城市</span><span>；日間</span><span>人口則超過</span><span>353萬人，</span><span>位居</span><span>日本第二。</span><span></br>
+            大阪</span><span>自奈良時代開始，</span><span>就因其</span><span>臨海</span><span>的地理位置</span><span>成為貿易港口，</span><span>並曾在此建立</span><span>「難波京」。</span><span></br>安土桃山時代，</span><span>豐臣秀吉</span><span>修建大阪城，</span><span>並以大阪</span><span>做為豐臣政權</span><span>的統治核心城市。</span><span>在江戶時代，</span><span>大阪</span><span>和京都、</span><span>江戶</span><span>並稱為「三都」，</span><span>是當時</span><span>日本經濟活動</span><span>最旺盛的都市，</span><span>被譽為</span><span>「天下的廚房」。</span><span></br>明治時代</span><span>之後，</span><span>大阪</span><span>仍是日本</span><span>最重要</span><span>的產業都市，</span><span>人口數</span><span>曾一度</span><span>超過東京，</span><span>有</span><span>「大大阪」</span><span>之稱。</span><span>在戰後</span><span>由於</span><span>東京一極集中的進展，</span><span>大阪雖然在人口數</span><span>和經濟發展</span><span>上被東京拉開距離，</span><span>但</span><span>仍然是</span><span>西日本</span><span>的最大都市</span><span>和經濟中心。</span><span>除了</span><span>經濟之外，</span><span>大阪</span><span>也以其</span><span>獨特的文化</span><span>而著稱。</span><span></br>今日的</span><span>大阪</span><span>和東京</span><span>並列為</span><span>日本</span><span>最具代表性的大都市，</span><span>也是在世界</span><span>具有知名度的</span><span>國際性都市。</span><span>2014年，</span><span>按照美國諮詢公司</span><span>A.T科爾尼</span><span>的全球城市排名，</span><span>大阪市</span><span>位居</span><span>世界第55位。</span></p>
+            </div>
         </div>
     </div>
-    <!-- </div> -->
     <div class="bgimg-2" id="osakaCastle">
         <div class="titleSection">
             <span class="slide-left-to-right">大阪城</span>
         </div>
     </div>
-    <div style="z-index: 3; position:relative;">
-        <div style="color:#ddd;  background-color:#282E34; text-align:center;padding:50px 80px;text-align: justify;">
-            <p>大阪城，位於日本大阪市中央區（古屬攝津國東成郡）的大阪城公園內，為大阪名勝之一，和名古屋城、熊本城並列日本歷史上的三名城，別名「金城」或「錦城」。</br>
-                在桃山時代是豐臣秀吉的居城。後來德川家康以兩次大坂之役（冬之陣、夏之陣）消滅了豐臣家，此後大坂城成為德川幕府控制西日本大名的重要據點。</br>
-                城郭含城下町等周長約7.8公里，與江戶城初期（內郭）相當（江戶後期含城下町外郭周長約15.8ｋｍ）。</p>
-            「大阪」在明治維新前寫作「大坂」，維新後忌於「坂」字可拆為「士反」，有「武士叛亂」之諱，因此於明治三年（1870年）改名為「大阪」，「大坂城」也因而更名為「大阪城」。一般講述更名前的歷史時仍會以舊寫「大坂城」稱之，以示時代區別。
+    <div class="largest_text_wrapper" >
+        <div class="desSection">
+            <div class="text-wrapper">
+            <span>大阪城</span><span>，位於</span><span>日本大阪市</span><span>中央區</span><span>（古屬</span><span>攝津國東成郡）</span><span>的大阪城公園內</span><span>，為大阪名勝之一</span><span>，和名古屋城</span><span>、熊本城</span><span>並列日本歷史上</span><span>的三名城</span><span>，別名</span><span>「金城」</span><span>或</span><span>「錦城」。</span></br>
+            <span>在桃山時代</span><span>是豐臣秀吉</span><span>的居城。</span><span>後來</span><span>德川家康</span><span>以兩次</span><span>大坂之役</span><span>（冬之陣</span><span>、夏之陣）</span><span>消滅了</span><span>豐臣家</span><span>，此後</span><span>大坂城</span><span>成為</span><span>德川幕府</span><span>控制</span><span>西日本大名</span><span>的重要</span><span>據點。</span></br>
+            <span>城郭</span><span>含城下町</span><span>等周長</span><span>約7.8公里</span><span>，與江戶城初期</span><span>（內郭）</span><span>相當</span><span>（江戶後期含城下町外郭周長約15.8ｋｍ）。</span><span></p>
+            「大阪」</span><span>在明治維新</span><span>前寫作</span><span>「大坂」</span><span>，維新後</span><span>忌於</span><span>「坂」</span><span>字可拆為</span><span>「士反」</span><span>，有</span><span>「武士叛亂」</span><span>之諱，</span><span>因此</span><span>於明治三年</span><span>（1870年）</span><span>改名</span><span>為</span><span>「大阪」</span><span>，「大坂城」</span><span>也因而</span><span>更名為</span><span>「大阪城」。</span><span>一般講述</span><span>更名前</span><span>的歷史時</span><span>仍會以舊寫</span><span>「大坂城」</span><span>稱之，</span><span>以示時代區別。</span>
+            </div>
+    </div>
             <p></p>
             </br>
             <div class="bgimg-1-btn">
-                <a class="bgimg-1-btn-text" href="javacript:;">
+                <a class="bgimg-1-btn-text" href="osaka_castle.html">
                     大阪城探索
                     <span class="bgimg-1-btn-text-border vert left"></span>
                     <span class="bgimg-1-btn-text-border vert right"></span>
@@ -389,16 +376,19 @@
                 </a>
             </div>
         </div>
-    </div>
+    
     <div class="bgimg-3" id="osakaTower">
         <div class="titleSection">
             <span class="slide-right-to-left">通天閣</span>
         </div>
     </div>
-    <div style="z-index: 3; position:relative;">
-        <div style="color:#ddd;  background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify; ">
-            <p>通天閣是位於日本大阪府大阪市浪速區新世界商業街的一個瞭望塔。為日本的登錄有形文化財產。具體地點是大阪府大阪市浪速區恵美須東1-18-6。</br>通天閣被稱為「浪速的埃菲爾鐵塔」，是為大阪的代表性標誌。</br>這裡有可以飽覽整個大阪風光的展望台，更有摸摸腳底便能帶來好運的「Billiken」神像坐鎮。</p>
-            通天閣這個名字的意思是「直通天空的高建築物」，命名者是明治初期的儒學者藤澤南嶽。通天閣是由建築師內藤多仲所設計，他也是東京鐵塔的設計者。現在的通天閣完成於1956年（昭和31年），是第二代通天閣。塔高100米，含避雷針的話則有103米。由350噸的鐵材建成，為一大娛樂設施「新世界」的象徵。利用內國勸業博覽會留下的廣大土地，同時也是大阪政界及財界主辦的計畫，鐵塔的規模可謂盛大空前。塔上有電機大廠日立的廣告。
+    <div class="largest_text_wrapper" >
+        <div class="desSection">
+            <div class="text-wrapper">
+            <span>通天閣</span><span>是位於日本</span><span>大阪府</span><span>大阪市</span><span>浪速區</span><span>新世界商業街</span><span>的一個瞭望塔。</span><span>為日本</span><span>的登錄有形文化財產。</span><span>具體地點是大阪府</span><span>大阪市</span><span>浪速區</span><span>恵美須東</span><span>1-18-6。</span></br><span>通天閣</span><span>被稱為</span><span>「</span><span>浪速</span><span>的埃菲爾鐵塔</span><span>」</span><span>，是為大阪</span><span>的代表性</span><span>標誌。</span></br><span>這裡有</span><span>可以飽覽</span><span>整個</span><span>大阪風光</span><span>的展望台</span><span>，更有摸摸腳底</span><span>便能帶來好運的</span><span>「Billiken」</span><span>神像</span><span>坐鎮。</span></p><span>
+            通天閣</span><span>這個名字</span><span>的意思是</span><span>「</span><span>直通</span><span>天空</span><span>的</span><span>高建築物</span><span>」</span><span>，命名者</span><span>是</span><span>明治</span><span>初期</span><span>的儒學者</span><span>藤澤南嶽。</span><span>通天閣</span><span>是由</span><span>建築師</span><span>內藤多仲</span><span>所設計，</span><span>他也是</span><span>東京鐵塔</span><span>的設計者。</span><span>現在</span><span>的</span><span>通天閣</span><span>完成於</span><span>1956年</span><span>（昭和</span><span>31年）<span>，是第二代</span><span>通天閣</span><span>。塔高100米</span><span>，含避雷針</span><span>的話</span><span>則有103米</span><span>。由350</span><span>噸</span><span>的鐵材</span><span>建成，</span><span>為一大</span><span>娛樂設施</span><span>「新世界」</span><span>的象徵</span><span>。</br>通天閣是利用</span><span>內國勸業博覽會</span><span>留下的</span><span>廣大土地</span><span>，同時</span><span>也是大阪政界</span><span>及財界</span><span>主辦的計畫</span><span>，鐵塔</span><span>的規模</span><span>可謂</span><span>盛大空前。</span><span>塔上有電機大廠</span><span>日立</span><span>的廣告。</span>
+             </div>
+    </div>
             <p></p>
             </br>
             <div class="bgimg-1-btn">
@@ -411,7 +401,6 @@
                 </a>
             </div>
         </div>
-    </div>
     <div class="bgimg-4" id="osakaCityRiver">
         <div class="titleSection">
             <span class="slide-left-to-right">道頓堀</span>
@@ -420,18 +409,29 @@
     <!-- <div style= "position: absolute; z-index: 100; color:#ddd; background-color:transparent;/*#282E34*/; width: 100px; height: 100px; /*padding:10px 80px;*/text-align: justify; ">
             <img src="resources/osakaBg.jpg" width="300px" height="100px"> -->
     </div>
-    <div style="z-index: 3; position:relative;">
+    <div class="largest_text_wrapper" >
         <div class="desSection">
-            <p class="text-wrapper">
-            <span>道頓堀是一條位於日本大阪府大阪市的運河，以鄰近的戲院、商業及娛樂場所聞名。</span>
-            <span>道頓堀與木津川及東橫堀川連接，全長約2.9公里，其名字亦成為大阪市中央區一個町的名稱。</span>
-            <span>大阪素有關西廚房之美譽，尤其在道頓堀，可以找到各式各樣的美食，</span>
-            <span>其知名的餐廳蟹道樂（かに道楽）總店及門外長30呎的大型蟹模型是道頓堀另一著名地標。 </span>
-            <span>沿著道頓堀運河旁兩旁有很多其他的美食餐廳、還有娛樂場所，圖中的一個人奔跑的固力果霓虹廣告，更常被雜誌拿來作代表大阪的照片。</span>
-        </p>
+            <div class="text-wrapper">
+                <span>道頓堀</span><span>是一條位於日本大阪府大阪市的運河</span><span>，以鄰近的</span><span>戲院</span><span>、商業</span><span>及娛樂場所聞名。</span>
+                </br><span>道頓堀</span><span>與木津川</span><span>及東橫堀川</span><span>連接</span><span>，全長約2.9公里</span><span>，其名字亦成為大阪市</span><span>中央區</span><span>一個町的名稱。</span>
+                </br><span>大阪</span><span>素有關西廚房</span><span>之美譽</span><span>，尤其在</span><span>道頓堀</span><span>，可以找到</span><span>各式各樣</span><span>的美食，</span>
+                <span>其知名的</span><span>餐廳蟹道樂</span><span>（かに道楽）</span><span>總店</span><span>及門外</span><span>長30呎</span><span>的大型蟹模型</span><span>是道頓堀</span><span>另一著名地標。 </span>
+                </br><span>沿著道頓堀運河旁兩旁有很多其他的</span><span>美食餐廳</span><span>、還有娛樂場所，</span><span>圖中的一個人奔跑的固力果霓虹廣告，更常被雜誌拿來作代表大阪的照片。</span>
+
         </div>
     </div>
-
+        <p></p>
+            </br>
+            <div class="bgimg-1-btn">
+                <a class="bgimg-1-btn-text" href="javacript:;">
+                    通天閣探索
+                    <span class="bgimg-1-btn-text-border vert left"></span>
+                    <span class="bgimg-1-btn-text-border vert right"></span>
+                    <span class="bgimg-1-btn-text-border hor top"></span>
+                    <span class="bgimg-1-btn-text-border hor bottom"></span>
+                </a>
+            </div>
+    </div>
 
 </body>
 

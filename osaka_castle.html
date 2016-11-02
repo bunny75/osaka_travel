@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
+	<style type="text/css">
+		body,
+		html {
+			position: relative;
+		    height: 100%;
+		    margin: 0;
+		    padding: 0;
+		    font: 400 15px/1.8 "Lato", sans-serif;
+		}
+		.firstBanner {
+    		/*background-image: url(resources/osaka_castle.jpg);*/
+    		height: auto;
+    		min-height: 600px;
+    		position: relative;
+        	/*opacity: 0.70;*/
+        	background-attachment: fixed;
+        	/*background-repeat: no-repeat;*/
+        	background-size: cover;
+        	background-position: center top; 
+        	overflow: hidden;
+        	z-index: 1;
+		}
+		.content01 {
+			background-image: url(resources/marble_texture4606.jpg);
+			background-size: cover;
+			min-height: 2000px;
+			background-position: center center;
+			z-index: 2000;
+			/*position: relative;*/
+		}
+		.caption {
+			position: absolute;
+			text-align: center;
+			left: 0;
+			right: 0;
+	        top: 19%;
+	        width: 100%;
+	        color: #fff;
+		}
+		.border {
+	        font-size: 30px;
+	        width: 100%;
+	    }
+	    .traffic {
+	    	font-size: 15px;
+	    	/*width: 100px;*/
+	    }
+	    .wropper {
+	    	width: 28%;
+	    	background-color:rgba(41,41,41,0.4);
+	        padding: 20px;
+	        text-align: center;
+	        top: 0;
+	        bottom: 0;
+	        left: 0;
+	        right: 0;
+	        margin: auto;
+	    }
+	    .caption2 {
+			position: absolute;
+			text-align: center;
+			left: 0;
+			right: 0;
+	        top: 0;
+	        bottom: 0;
+	        width: 100%;
+	        background-color: transparent;
+		}
+	    .text {
+			position: relative;
+			text-align: left;
+			padding: 10px;
+			width: 40%;
+			margin: 25px 20px 10px 10px;
+			padding-left:30px; 
+			float: left;
+			z-index: 2;
+	    }
+	    .pic {
+	    	position: relative;
+	    	margin: 47px 10px 10px 10px;
+     		display: inline-block;
+     		text-align: center;
+     		z-index: 2;
+     		float: left;
+     		width: 50%;
+    		left: 6%;
+    		list-style-type: none;
+    		min-height: 100%;
+    		height: auto;
+	    }
+	    .picArea {
+	    	min-height: 100%;
+    		height: auto;
+    		position: relative;
+	    }
+	    .pic img {
+	    	float:left;
+			margin-right:10px;
+			margin-left:10px;
+	    }
+	    .picBg {
+	    	position: absolute;
+	    	background-color: #b1b12f;
+	    	width: 28%;
+	    	margin-top: 26px;
+	    	height: 420px;
+	    	z-index: 1;
+	    	right: 12%;
+	    }
+	    .down {
+			animation-name: down;
+    		animation-duration: 2s;
+    		animation-fill-mode: forwards;
+	    }
+	    .up {
+	    	animation-name: up;
+    		animation-duration: 2s;
+    		animation-fill-mode: forwards;
+	    }
+	    .down2 {
+			animation-name: down2;
+    		animation-duration: 3.5s;
+    		animation-fill-mode: forwards;
+	    }
+	    .up2 {
+	    	animation-name: up2;
+    		animation-duration: 3.5s;
+    		animation-fill-mode: forwards;
+	    }
+	    @keyframes down {
+		    0%   {top: 0px;}
+		    12%  {top: 5px;}
+		    25%  {top: 10px;}
+		    37%  {top: 15px;}
+		    50%  {top: 20px;}
+		    75%  {top: 25px;}
+		    100% {top: 30px;}
+		}
+		@keyframes up {
+		    0%   {margin: 40px 0px 10px 10px; bottom: : 0px;}
+		    12%  {margin: 35px 0px 10px 10px; bottom: : 5px;}
+		    25%  {margin: 30px 0px 10px 10px; bottom: : 10px;}
+		    37%  {margin: 25px 0px 10px 10px; bottom: : 15px;}
+		    50%  {margin: 20px 0px 10px 10px; bottom: : 20px;}
+		    75%  {margin: 15px 0px 10px 10px; bottom: : 25px;}
+		    100% {margin: 10px 0px 10px 10px; bottom: : 30px;}
+		}
+		@keyframes down2 {
+		    0%   {top: 0px;}
+		    12%  {top: 3px;}
+		    25%  {top: 5px;}
+		    37%  {top: 7px;}
+		    50%  {top: 9px;}
+		    75%  {top: 11px;}
+		    100% {top: 13px;}
+		}
+		@keyframes up2 {
+		    0%   {margin-top: 26px; bottom: : 0px;}
+		    
+		    25%  {margin-top: 25px; bottom: : 1px;}
+		    
+		    50%  {margin-top: 24px; bottom: : 2px;}
+		    
+		    100% {margin-top: 23px; bottom: : 3px;}
+		}
+		.navbar {
+			z-index: 10000;
+		}
+
+	</style>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function(){
+    		var lastScrollTop = 0, delta = 5;
+
+    		$(window).scroll(function(event){
+	       		var st = $(this).scrollTop();
+	       
+	       		if(Math.abs(lastScrollTop - st) <= delta)
+	          	return;
+	       
+	       		if (st > lastScrollTop){
+	           		// downscroll code
+	           		// $(".text").animate({left: '15px'});
+	           		$(".picBg").addClass("down2");
+	           		$(".picBg").removeClass("up2");
+	           		$(".pic").addClass("down");
+	           		$(".pic").removeClass("up");
+	           		console.log('scroll down');
+	       		} else {
+	          		// upscroll code
+	          		// $(".text").animate({bottom: '15px'});
+	          		// $(".pic").animate({scrollTop: 2}, 6000);
+	          		$(".picBg").addClass("up2");
+	           		$(".picBg").removeClass("down2");
+	          		$(".pic").addClass("up");
+	          		$(".pic").removeClass("down");
+	          		console.log('scroll up');
+	       		}
+       			lastScrollTop = st;
+   			 });
+
+
+    		var $body = $(document);
+    		$body.bind('scroll', function() {
+	        	// "Disable" the horizontal scroll.
+	        	if ($body.scrollLeft() !== 0) {
+	            	$body.scrollLeft(0);
+	        	}
+    		});
+
+		});
+
+	</script>
+
+    <link rel="stylesheet" type="text/css" href="css/style1.css" />
+	
+</head>
+<body>
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#osakaAttraction" id="home">大阪市景點</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#osakaCastle">大阪城</a></li>
+                    <!-- <li class="icon">/</li> -->
+                    <li><a href="#osakaTower">通天閣</a></li>
+                    <!-- <li class="icon">/</li> -->
+                    <li class="dropdown">
+                        <a href="osakaCityRiver" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">道頓堀 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#osakaCityRiver">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+	
+	<div class="firstBanner" >
+		
+		 <ul class="cb-slideshow">
+            <li><span>Image 01</span></li>
+            <li><span>Image 02</span></li>
+            <li><span>Image 03</span></li>
+            <li><span>Image 04</span></li>
+            <li><span>Image 05</span></li>
+            <li><span>Image 06</span></li>
+            <li><span>Image 07</span></li>
+        </ul>
+		<div class="caption2">
+        </div>
+
+		<div class="caption">
+			<div class="wropper">
+	            <span class="border">大阪城天守閣</span></br>
+	            <span class="traffic">地址：中央区大阪城1-1</span></br>
+	            <span class="traffic">從地鐵各線谷町四丁目站1B、9號出口，森之宮站1、3B號出口</span></br>
+	            <span class="traffic">大阪商務園區站1號出口，天滿橋站3號出口</span></br>
+	            <span class="traffic">京阪天滿橋站出站後步行約15～20分鐘</span>
+            </div>
+        </div>
+	</div>
+	<div class="content01">
+		<div class="aboutOsakaCastle">
+			<div class="text">
+				<h3>大阪城天守閣</h3>
+				<p>天守閣是城郭的象徵，城內建築物之中最別出心裁，追求奢華。豐臣時代的大坂城天守閣於1585年建成，當時豐臣秀吉邀請了各大名（諸侯）以及歐洲人傳教士，炫耀天守閣的華麗外觀、從展望台看到的景觀、到奉送的寶物等。
+				現在的天守閣建成於1931年，是模仿豐臣秀吉時代的天守閣建造的，為鋼筋混凝土結構。1997年作為重要的近代建築被登錄為國家保護文物。</p>
+			</div>
+			<div class="picArea">
+			<div class="pic">
+				
+					<li><img class="osaka_castle_item02" src="resources/osaka_castle_item02.jpg" ></li>
+					<li><img class="osaka_castle_item01" src="resources/osaka_castle_item01.jpg" ></li>
+
+			</div>
+			<div class="picBg">	
+				</div>
+				</div>
+		</div>
+	</div>
+
+
+</body>
+</html>
