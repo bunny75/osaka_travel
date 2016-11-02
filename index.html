@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
     <meta charset="utf-8">
     <!-- 最新編譯和最佳化的 CSS -->
@@ -25,21 +26,21 @@
             return false;
         });
     });
+    $(document).ready(function() {
+        $("a").click(function() {
+            console.log($(this).attr("href"))
 
-    $("a").click(function() {
-        console.log($(this).attr("href"))
+            var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 
-        var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+            $body.animate({
+                scrollTop: $($(this).attr("href")).offset().top + "px"
+            }, {
+                duration: 1500,
+                easing: "swing"
+            });
 
-        $body.animate({
-            scrollTop: $($(this).attr("href")).offset().top + "px"
-        }, {
-            duration: 500,
-            easing: "swing"
+            return false;
         });
-
-        return false;
-
     });
 //     $( document ).ready(function() {
 //         $(".bgimg-1").mouseover(function(){
@@ -302,31 +303,7 @@
                     <!-- <li class="icon">/</li> -->
                     <li><a href="#osakaTower">通天閣</a></li>
                     <!-- <li class="icon">/</li> -->
-                    <li class="dropdown">
-                        <a href="osakaCityRiver" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">道頓堀 <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#osakaCityRiver">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#osakaCityRiver">道頓堀</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
